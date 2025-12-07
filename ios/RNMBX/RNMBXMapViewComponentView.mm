@@ -190,6 +190,11 @@ using namespace facebook::react;
     RNMBX_REMAP_OPTIONAL_PROP_BOOL(rotateEnabled, reactRotateEnabled)
 
     RNMBX_REMAP_OPTIONAL_PROP_BOOL(pitchEnabled, reactPitchEnabled)
+
+    id maxPitch = RNMBXConvertFollyDynamicToId(newViewProps.maxPitch);
+    if (maxPitch != nil) {
+        _view.reactMaxPitch = [(NSNumber *)maxPitch doubleValue];
+    }
   
     RNMBX_REMAP_OPTIONAL_PROP_NSDictionary(gestureSettings, reactGestureSettings)
 
